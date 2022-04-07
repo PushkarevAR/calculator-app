@@ -7,7 +7,7 @@ type ButtonProps = {
 
 function InputButton({ content, clicked }: ButtonProps): JSX.Element {
   return (
-    <button type="button" onClick={() => clicked(content)}>{content}</button>
+    <button className="inputButtton" type="button" onClick={() => clicked(content)}>{content}</button>
   );
 }
 
