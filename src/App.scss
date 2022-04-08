@@ -30,21 +30,40 @@ $calculator-text: #f2f2f2;
         @include sizes(60px, 100%);
         border: none;
         border-radius: 12px;
-        font-size: 24px;
+        font-size: 18px;
+        text-align: end;
+        padding-right: 12px;
         color: $calculator-text;
-        background-color: #466eacd5;
+        background-color: $calculator-background;
+
+        &:focus{
+            outline: none;
+        }
+
+        &:hover{
+            background-color: #4c7abf;
+        }
     }
 
     .result {
+        @include sizes(32px, 100%);
+        text-align: end;
         color: $calculator-text;
-        font-size: 24px;
+        font-size: 32px;
         margin-left: auto;
         margin-right: 0px;
+        padding-right: 12px;
+        position: relative;
 
         &::after{
-            @include sizes(2px, 100px);
-            background-color: $calculator-text;
+            position: absolute;
+            display: block;
+            top: 56px;
+            @include sizes(2px, 100%);
+            content: "";
+            background-color: #4c7abf;
         }
+        
     }
 
     .line {
@@ -58,12 +77,21 @@ $calculator-text: #f2f2f2;
             margin: 4px;
             border: none;
             border-radius: 50%;
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 500;
+            cursor: pointer;
+
+            &#equal{
+                color: $calculator-background;
+                background-color: $calculator-text;       
+            }
+
+            &:focus{
+                outline: none;
+            }       
 
             &:hover{
-                color: $calculator-background;
-                background-color: $calculator-text;
+                background-color: #4c7abf;
             }
         }
     }

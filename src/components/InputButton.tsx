@@ -6,8 +6,10 @@ type ButtonProps = {
 }
 
 function InputButton({ content, clicked }: ButtonProps): JSX.Element {
+  const equalBtn = content === '=' ? 'equal' : '';
+
   return (
-    <button className="inputButtton" type="button" onClick={() => clicked(content)}>{content}</button>
+    <button className="inputButtton" id={equalBtn} type="button" onClick={() => clicked(content)}>{content}</button>
   );
 }
 
