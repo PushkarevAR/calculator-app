@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import InputButton from './InputButton';
 import calculate from '../utils/calculate';
+import isValid from '../utils/validation';
 
 function Calculator(): JSX.Element {
   const [input, setInput] = useState('');
-  const [result, setResult] = useState(0);
+  const [result, setResult] = useState<number | string>(0);
 
   const handleClick = (content: string): void => {
     setInput(input + content);
@@ -18,18 +19,33 @@ function Calculator(): JSX.Element {
     if (input.length > 0) {
       setInput('');
       setResult(0);
-    } else console.log('input is empry');
+    } else setResult('input is empty');
   };
 
   const handleCalculation = (expression: string): void => {
-    const res = calculate(expression);
-    setResult(res);
+    let valid = false;
+    try {
+      valid = isValid(expression);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setResult(error.message);
+      }
+    }
+    try {
+      if (valid) setResult(calculate(expression));
+    } catch (error: unknown) {
+      if (error instanceof Error) console.log(error.message);
+      else console.log(error);
+    }
   };
+  const resultClasses = `result ${
+    result.toString().length > 12 ? 'error' : ''
+  }`;
 
   return (
     <div className="calculator">
       <input type="text" className="input" id="exprInput" value={input} onChange={(e) => handleChange(e)} />
-      <p className="result" id="result">{result}</p>
+      <p className={resultClasses} id="result">{result}</p>
       <div className="line">
         <InputButton content="C" clicked={() => handleDelete()} />
         <InputButton content="(" clicked={() => handleClick('(')} />

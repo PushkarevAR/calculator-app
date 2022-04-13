@@ -7,6 +7,7 @@ $calculator-text: #f2f2f2;
     height: $height;
     width: $width;
 }
+
 .App {
     @include sizes(100vh, 100%);
     background-color: $background;
@@ -46,14 +47,17 @@ $calculator-text: #f2f2f2;
     }
 
     .result {
-        @include sizes(32px, 100%);
+        @include sizes(80px, 100%);
         text-align: end;
         color: $calculator-text;
         font-size: 32px;
-        margin-left: auto;
-        margin-right: 0px;
+        margin: 24px 0px 24px auto;
         padding-right: 12px;
         position: relative;
+
+        &.error{
+            font-size: 16px;
+        }
 
         &::after{
             position: absolute;
