@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable quote-props */
 /* eslint-disable lines-between-class-members */
+
 import { Token, Tokenizer } from './tokenizer';
 
 export interface Node {

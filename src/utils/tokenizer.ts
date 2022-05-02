@@ -1,5 +1,6 @@
 /* eslint-disable no-constant-condition */
 /* eslint-disable lines-between-class-members */
+
 export type Token = {
     type: string;
     value: string;

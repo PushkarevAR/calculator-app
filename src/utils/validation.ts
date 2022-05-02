@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-expressions */
-
 /* Validation rules:
   --- only numbers & allowed operator & brackets
   --- no operator sequence
@@ -35,7 +33,9 @@ function isValid(input: string): boolean | never {
     }
 
     if (isBracket) {
-      char === '(' ? counter += 1 : counter -= 1;
+      if (char === '(') counter += 1;
+      else counter -= 1;
+      // char === '(' ? counter += 1 : counter -= 1;
     }
   }
   if (counter === 0) return true;

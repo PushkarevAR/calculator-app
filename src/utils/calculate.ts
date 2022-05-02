@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable dot-notation */
 /* eslint-disable no-prototype-builtins */
+
 import { Tokenizer } from './tokenizer';
 import { Node, Parser } from './parser';
 
@@ -54,6 +55,7 @@ function evaluate(tree: Node): number {
 function calculate(input: string): number {
   const tokens = new Tokenizer(input);
   const parser = new Parser(tokens);
+  // console.log(parser.parse());
   return evaluate(parser.parse());
 }
 
