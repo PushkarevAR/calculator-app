@@ -15,6 +15,11 @@ function Calculator(): JSX.Element {
     setInput(e.target.value);
   };
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    handleCalculation(input);
+  };
+
   const handleDelete = (): void => {
     if (input.length > 0) {
       setInput('');
@@ -38,13 +43,16 @@ function Calculator(): JSX.Element {
       else console.log(error);
     }
   };
+
   const resultClasses = `result ${
     result.toString().length > 12 ? 'error' : ''
   }`;
 
   return (
     <div className="calculator">
-      <input type="text" className="input" id="exprInput" value={input} onChange={(e) => handleChange(e)} />
+      <form action="" className="inputForm" onSubmit={(e) => handleSubmit(e)}>
+        <input type="text" className="input" id="exprInput" value={input} onChange={(e) => handleChange(e)} />
+      </form>
       <p className={resultClasses} id="result">{result}</p>
       <div className="line">
         <InputButton content="C" clicked={() => handleDelete()} />

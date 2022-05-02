@@ -32,25 +32,29 @@ $calculator-text: #f2f2f2;
     justify-content: center;
     align-items: center;
 
-    .input {
+    .inputForm {
         @include sizes(60px, 100%);
-        border: none;
-        border-radius: 12px;
-        font-size: 18px;
-        text-align: end;
-        padding-right: 12px;
-        color: $calculator-text;
-        background-color: $calculator-background;
 
-        &:focus{
-            @media (min-width: 420px) {
-                outline: none;
+        .input {
+            @include sizes(100%, 100%);
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            text-align: end;
+            padding-right: 12px;
+            color: $calculator-text;
+            background-color: $calculator-background;
+    
+            &:focus{
+                @media (min-width: 420px) {
+                    outline: none;
+                }
             }
-        }
-
-        &:hover{
-            @media (min-width: 420px) {
-                background-color: #4c7abf;
+    
+            &:hover{
+                @media (min-width: 420px) {
+                    background-color: #4c7abf;
+                }
             }
         }
     }
