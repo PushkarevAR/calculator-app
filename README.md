@@ -1,46 +1,51 @@
-# Getting Started with Create React App
+## Description
+The Calculator application is part of an interface designer's test task:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+As a test task, we propose to develop a calculator [interface](https://www.figma.com/proto/D5OltlIPKtozs1ib4bBuP4/Untitled?node-id=1%3A4&scaling=min-zoom).
 
-## Available Scripts
+### Requirements
 
-In the project directory, you can run:
+1. The calculator's input accepts a string with a mathematical expression.
+2. A mathematical expression can consist of addition, subtraction, multiplication and division operations, as well as parentheses.
+3. Mathematical expression can be typed both from the keyboard and by pressing the corresponding buttons on the calculator. The calculation of the expression must be performed by pressing the "=" button of the calculator or by pressing the Enter key of the keyboard.
+4. Parsing and calculation of a mathematical expression must be done independently, without using third-party libraries.
+5. The architecture of the solution should ensure the expansion of the list of supported operations with minimal changes for the existing functionality.
+6. The solution involves self-assembly of the application using webpack or analogues.
+7. The calculator should take up the entire browser screen when viewed from a mobile phone.
+8. Calculator source code must be covered by tests.
+9. Calculator source code must be covered with typing (flow or typescript).
+10. The project must have static code analysis (eslint, stylelint).
+11. The project repository must contain the file [readme.md] with a description of the calculator's installation,
+running and testing.
 
-### `npm start`
+## Technology stack:
+- React 17.0.2
+- SCSS 1.49.9
+- Jest 27.4.1
+- TypeScript 4.6.2
+- ESlint 8.11.0
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Build
+To build and run this application locally, you'll need the latest versions of Git installed on your computer. From your
+command line:
+```
+# Clone this repository
+$ git clone https://github.com/PushkarevAR/calculator-app.git
 
-### `npm test`
+# Go into the repository
+$ cd calculator-app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Test
+$ npm test
 
-### `npm run build`
+# Run
+$ npm start
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Deploy
+$ npm run deploy
+```
+Deploy available via [gh-pages](https://pushkarevar.github.io/calculator-app/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Showcase
+<img src="https://user-images.githubusercontent.com/85485508/167120543-8bcdd422-70ca-46a4-8b11-6371465fdbd5.png" alt="calculator-app-showcase"/>
